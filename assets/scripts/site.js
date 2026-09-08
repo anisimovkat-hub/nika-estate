@@ -1,0 +1,5 @@
+const menu=document.querySelector('.menu');
+const nav=document.querySelector('.site-nav');
+if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>nav.classList.remove('open')))}
+document.querySelectorAll('.faq-button').forEach(button=>button.addEventListener('click',()=>{const item=button.closest('.faq-item');const open=item.classList.toggle('open');button.setAttribute('aria-expanded',String(open))}));
+document.querySelectorAll('.lead-form').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form);const page=form.dataset.page||document.title;const name=(data.get('name')||'').toString().trim();const contact=(data.get('contact')||'').toString().trim();const goal=(data.get('goal')||'').toString().trim();const message=[`Здравствуйте! Хочу обсудить: ${page}.`,`Имя: ${name}.`,`Контакт: ${contact}.`,goal?`Задача: ${goal}.`:``].filter(Boolean).join('\n');window.open(`https://wa.me/971508698020?text=${encodeURIComponent(message)}`,'_blank','noopener')}));
