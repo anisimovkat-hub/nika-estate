@@ -3,7 +3,7 @@
 Static Russian-language landing pages in the Nika Estate brand style.
 
 - `/` — City Walk + Central Park
-- `/dubai/` — Dubai property selection
+- `/dubai/` — UAE property selection with a six-step quiz
 - `/uae/` — Dubai vs Abu Dhabi
 - `/saudi-arabia/` — Riyadh and OSUS Eye
 - `/invest-meeting/` — online investment meeting

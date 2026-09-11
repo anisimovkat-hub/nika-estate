@@ -8,14 +8,14 @@
 ## Routes
 
 - `/` — City Walk + Central Park
-- `/dubai/` — Dubai property selection for life, investment and rent
+- `/dubai/` — UAE property selection with a six-step quiz and project examples
 - `/uae/` — Dubai and Abu Dhabi comparison
 - `/saudi-arabia/` — Saudi Arabia / Riyadh / OSUS Eye
 - `/invest-meeting/` — online investment consultation
 
 ## Lead routing
 
-Forms open the official Nika Estate WhatsApp number `+971 50 869 8020` with a prefilled message. The visitor reviews and sends the message in WhatsApp.
+The Dubai page has two lead paths: a six-step selection quiz and a short broker consultation form. Both open the official Nika Estate WhatsApp number `+971 50 869 8020` with a prefilled message. The visitor reviews and sends the message in WhatsApp.
 
 ## Content safeguards
 
