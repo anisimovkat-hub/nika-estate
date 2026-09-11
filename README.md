@@ -21,3 +21,7 @@ The public site is deployed to Cloudflare Pages at:
 - https://nika-estate.pages.dev/invest-meeting/
 
 GitHub remains the source of truth. Cloudflare Pages receives a clean static build from the `main` branch, without repository metadata or internal project documents.
+
+## Lead capture
+
+Every landing includes `assets/scripts/lead-capture.js` once before `</body>`. The script sends valid form submissions to the shared Nika Estate Google Sheets endpoint and records the landing name, offer, form answers, contacts, URL, referrer and UTM parameters. A form-specific `data-offer-name` overrides the page default when a landing contains multiple offers.

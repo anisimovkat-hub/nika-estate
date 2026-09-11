@@ -15,7 +15,17 @@
 
 ## Lead routing
 
-The Dubai page has two lead paths: a six-step selection quiz and a short broker consultation form. Both open the official Nika Estate WhatsApp number `+971 50 869 8020` with a prefilled message. The visitor reviews and sends the message in WhatsApp.
+All forms send a lead copy to the shared Google Sheets endpoint and then keep the existing WhatsApp flow. The shared browser module is `assets/scripts/lead-capture.js`; each page passes its landing and default offer names through `data-landing-name` and `data-offer-name`. Pages with more than one form set a separate `data-offer-name` on each form.
+
+The Google Apps Script asset served through `?asset=lead-capture` had invalid JavaScript on 2026-09-11, so the repository uses a corrected local client module pointed at the same healthy POST endpoint. Do not replace it with the hosted asset until that deployment passes a JavaScript syntax check.
+
+### New landing checklist
+
+1. Include `assets/scripts/lead-capture.js` once before `</body>`.
+2. Set the shared endpoint, `data-landing-name` and the page-level `data-offer-name` on the script tag.
+3. If forms promote different offers, set `data-offer-name` on each form.
+4. Keep contact field names compatible: `name`, `phone` or `contact`, `email`, `telegram`, `whatsapp`, `messenger`.
+5. Verify that the form is bound once and send one clearly marked test lead before launch.
 
 ## Content safeguards
 
