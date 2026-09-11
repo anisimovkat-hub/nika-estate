@@ -12,4 +12,12 @@ The visual system uses local Inter and Cormorant Garamond fonts, the real Nika E
 
 ## Publication
 
-GitHub Pages deploys the `main` branch from the repository root.
+The public site is deployed to Cloudflare Pages at:
+
+- https://nika-estate.pages.dev/
+- https://nika-estate.pages.dev/dubai/
+- https://nika-estate.pages.dev/uae/
+- https://nika-estate.pages.dev/saudi-arabia/
+- https://nika-estate.pages.dev/invest-meeting/
+
+GitHub remains the source of truth. Cloudflare Pages receives a clean static build from the `main` branch, without repository metadata or internal project documents.

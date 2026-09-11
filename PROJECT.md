@@ -1,17 +1,17 @@
 # Nika Estate landing pages
 
 - Repository: https://github.com/anisimovkat-hub/nika-estate
-- Live base URL: https://anisimovkat-hub.github.io/nika-estate/
-- Deployment: GitHub Pages, `main` branch, repository root
+- Live base URL: https://nika-estate.pages.dev/
+- Deployment: Cloudflare Pages, project `nika-estate`, clean static upload from `main`
 - Build: static HTML, CSS and JavaScript; no package installation
 
 ## Routes
 
-- `/` — City Walk + Central Park
-- `/dubai/` — UAE property selection with a six-step quiz and project examples
-- `/uae/` — Dubai and Abu Dhabi comparison
-- `/saudi-arabia/` — Saudi Arabia / Riyadh / OSUS Eye
-- `/invest-meeting/` — online investment consultation
+- `https://nika-estate.pages.dev/` — City Walk + Central Park
+- `https://nika-estate.pages.dev/dubai/` — UAE property selection with a six-step quiz and project examples
+- `https://nika-estate.pages.dev/uae/` — Dubai and Abu Dhabi comparison
+- `https://nika-estate.pages.dev/saudi-arabia/` — Saudi Arabia / Riyadh / OSUS Eye
+- `https://nika-estate.pages.dev/invest-meeting/` — online investment consultation
 
 ## Lead routing
 
