@@ -206,7 +206,7 @@ document.querySelectorAll('.lead-form').forEach((form) => {
 const mobileCta = document.querySelector('.mobile-cta');
 
 if (mobileCta && 'IntersectionObserver' in window) {
-  const coveredSections = [...document.querySelectorAll('[data-quiz-form], #request')];
+  const coveredSections = [...document.querySelectorAll('[data-quiz-form], [data-mobile-cta-cover], #request')];
   const visibleSections = new Set();
   const mobileCtaObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
