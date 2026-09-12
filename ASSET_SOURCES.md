@@ -12,4 +12,9 @@ Additional portfolio assets:
 - Abu Dhabi / Saadiyat image — public Nika Estate UAE catalog image.
 - Nika Estate team image — collected public Nika Estate brand material.
 
+The Archive project landing:
+
+- `assets/images/the-archive/*` — project renders extracted from the client-supplied brochure `/Users/katerinaanisimova/Documents/Dubai & Abu Dhabi — недвижимость/01_Объекты/The Archive by Imtiaz/Брошюра/The_Archive_by_Imtiaz_брошюра.pdf`.
+- Published prices, areas, amenities, handover timing and payment-plan figures follow that September 2026 brochure. The official Imtiaz property page was used to confirm the developer, DLRC location, furnished status and amenities.
+
 All factual location and amenity wording is based on supplied brochures and cited official sources. Availability, price and unit-specific characteristics are intentionally not fixed in the landing and should be checked before lead-campaign launch.
