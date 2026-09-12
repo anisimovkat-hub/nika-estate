@@ -74,10 +74,13 @@ if (quiz) {
   const progress = quiz.querySelector('[data-quiz-progress]');
   const bottomGoal = document.querySelector('[data-goal-select]');
   let activeStep = 0;
+  let autoAdvanceTimer;
 
   function renderQuiz() {
     steps.forEach((step, index) => {
       step.hidden = index !== activeStep;
+      const nextButton = step.querySelector('[data-quiz-next]');
+      if (nextButton) nextButton.disabled = false;
     });
     counter.textContent = `${activeStep + 1} из ${steps.length}`;
     progress.style.width = `${((activeStep + 1) / steps.length) * 100}%`;
@@ -116,6 +119,19 @@ if (quiz) {
       event.target.closest('.quiz-options').querySelectorAll('.quiz-option').forEach((option) => {
         option.classList.toggle('is-selected', option.querySelector('input').checked);
       });
+
+      if (quiz.hasAttribute('data-quiz-auto-advance') && activeStep < steps.length - 1) {
+        const currentStep = steps[activeStep];
+        const nextButton = currentStep.querySelector('[data-quiz-next]');
+        if (nextButton) nextButton.disabled = true;
+        window.clearTimeout(autoAdvanceTimer);
+        autoAdvanceTimer = window.setTimeout(() => {
+          if (steps[activeStep] !== currentStep || !stepHasAnswer(currentStep)) return;
+          activeStep += 1;
+          renderQuiz();
+          quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 320);
+      }
     }
 
     if (event.target.name === 'quiz_goal' && bottomGoal) {

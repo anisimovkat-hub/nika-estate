@@ -1,58 +1,63 @@
-# Design QA — инвестиционная встреча Nika Estate
+# Design QA — «Дубай или Абу‑Даби» Nika Estate
 
 ## Артефакты и нормализация
 
-- Source visual truth, desktop: `/var/folders/q_/sn0glqyj0zb8fnvz7dxlsm280000gn/T/TemporaryItems/NSIRD_screencaptureui_63w75O/Снимок экрана — 2026-09-11 в 16.48.48.png`.
-- Source visual truth, mobile: `/var/folders/q_/sn0glqyj0zb8fnvz7dxlsm280000gn/T/TemporaryItems/NSIRD_screencaptureui_iZGuEK/Снимок экрана — 2026-09-11 в 16.49.37.png`.
-- Implementation URL: `http://localhost:4174/invest-meeting/`.
-- Implementation screenshots: `/private/tmp/prodigital-work/sites/nika-invest-qa/desktop-hero.jpg`, `/private/tmp/prodigital-work/sites/nika-invest-qa/desktop-form.jpg`, `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-hero-final.jpg`, `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-plan-final.jpg`, `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-form-telegram.jpg`.
-- Same-input comparison screenshots: `/private/tmp/prodigital-work/sites/nika-invest-qa/desktop-comparison.jpg`, `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-comparison-final.jpg`.
-- Desktop source pixels: `2940 × 1912` at Retina density `2x`. Browser chrome was excluded with a 309 px source crop; the compared page region was approximately `2940 × 1601` pixels, or `1470 × 800.5` CSS px.
-- Desktop implementation: `1280 × 720` pixels, viewport `1280 × 720` CSS px, density `1x`. In the side-by-side comparison the live desktop layout used a `960 × 523` CSS iframe and both sides were scaled to `600 × 327` for one comparison frame.
-- Mobile source pixels: `794 × 1334` at `2x`, normalized to `397 × 667` CSS px.
-- Mobile implementation: `397 × 667` pixels, viewport `397 × 667` CSS px, density `1x`; exact normalized viewport match. Additional responsive checks used `390 × 844`.
-- State: public page, top-of-page hero, closed mobile menu for visual comparison; separate focused checks for expanded menu, meeting plan, project choice and Telegram form state.
+- Source visual truth, hero: `/var/folders/q_/sn0glqyj0zb8fnvz7dxlsm280000gn/T/TemporaryItems/NSIRD_screencaptureui_F2eUlZ/Снимок экрана — 2026-09-11 в 18.02.41.png`.
+- Source visual truth, selection block: `/var/folders/q_/sn0glqyj0zb8fnvz7dxlsm280000gn/T/TemporaryItems/NSIRD_screencaptureui_iZRF7c/Снимок экрана — 2026-09-11 в 18.03.14.png` and `/Users/katerinaanisimova/Desktop/Снимок экрана — 2026-09-11 в 18.04.29.png`.
+- Source visual truth, quiz goal cards: `/var/folders/q_/sn0glqyj0zb8fnvz7dxlsm280000gn/T/TemporaryItems/NSIRD_screencaptureui_11Zhqa/Снимок экрана — 2026-09-11 в 18.05.20.png`.
+- Implementation URL: `http://localhost:4174/uae/`.
+- Implementation screenshots: in-app Browser captures shown inline in the task at desktop `1280 × 720` and mobile `390 × 844`; the browser surface does not expose a filesystem path for these captures.
+- Source desktop screenshots are Retina browser captures (`2940 × 1912` and `2778 × 1412`) with browser chrome. Comparison used the page content region and normalized it to CSS-pixel proportions rather than comparing browser chrome.
+- Implementation density: `1x`; desktop viewport `1280 × 720`, mobile viewport `390 × 844`.
+- States: hero, selection block, first quiz question, full quiz progression, Telegram contact state, profitability block, Archive payment table and final lead form.
 
 ## Full-view comparison evidence
 
-- Desktop comparison: the implementation preserves the reference logic — full-width darkened property image, one dominant offer, short proof row and primary CTA — while using the Nika Estate header, palette and real project imagery. The Nika hero is deliberately shorter than the reference and contains fewer unsupported promotional claims.
-- Mobile comparison: offer, lead, CTA and all three proof points fit into the first `397 × 667` screen. The header remains branded and the text hierarchy stays readable over the image.
-- Intentional differences: Percent&Co. yellow/blue branding, `+40%` promise and ruble price claims were not copied. They were replaced with Nika Estate gold/black/ivory tokens and source-backed calculation language.
+- The hero keeps the reference two-column composition and Nika Estate’s white, black and gold system. The offer is now the dominant element; the explanatory line is visually 2–3 times smaller and the CTA is present on the first screen.
+- The dark selection block follows the supplied layout direction: large headline on the left, short financial promise and CTA in the upper-right, three goal cards below.
+- Mobile keeps the same reading order as desktop, with single-column cards and full-width actions. At `390px` there is no horizontal overflow.
+- The detailed profitability section intentionally extends beyond the supplied screenshots because the user requested concrete first-payment, payment-plan, layout, rent and resale calculations.
 
-## Focused region evidence
+## Focused comparison evidence
 
-- Meeting plan: `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-plan-final.jpg` confirms a single-column numbered list, compact line height and no fixed CTA covering the content.
-- Form: `/private/tmp/prodigital-work/sites/nika-invest-qa/mobile-form-telegram.jpg` confirms four messenger choices, the conditional Telegram username field, one primary submit action and separate WhatsApp/call actions below.
-- Desktop form: `/private/tmp/prodigital-work/sites/nika-invest-qa/desktop-form.jpg` confirms a balanced two-column layout and contact actions below the form.
+- Hero: prepositions in the offer and subtitle are tied with non-breaking spaces; the subtitle and CTA remain visible at `390 × 844`.
+- Selection block: the new heading wraps as one semantic group, the financial line and «Получить разбор» sit above the cards on desktop, and the action becomes full-width on mobile.
+- Quiz: goal labels match the requested concrete outcomes. Choosing a radio option automatically advances after `320ms`; the complete path reaches step `6 из 6`. Telegram reveals a required `@username` field, and the selected goal synchronizes with the final form.
+- Numbers and cases: Archive and Jadeel use real repository images. Payment rows, plan steps, layouts and AED/USD conversions remain readable at `390px`.
+- Final form: «под вашу цель» stays together on one line and does not overflow at `390px`.
 
 ## Findings
 
 - No actionable P0/P1/P2 findings remain.
-- Typography: passed. Display and body copy use the existing Nika sans stack, with reduced line height, tighter tracking and no oversized serif display treatment.
-- Spacing/layout: passed. Hero height and section density are compact on desktop; mobile content is single-column, tap targets are at least 54 px, and fixed actions do not cover sections with their own CTA.
-- Colors/tokens: passed. Brand gold, black, ivory and neutral borders are applied consistently with sufficient contrast.
-- Image quality: passed. The hero, full-width lifestyle image, project cards and team block use real repository assets with purposeful `object-fit` crops; no placeholder, emoji, CSS-drawn or fake SVG imagery is used.
-- Copy/content: passed. The page follows the investment-meeting sequence, uses direct Russian buyer language, contains four concrete project examples and qualifies yield numbers as benchmarks rather than guarantees.
-- Responsiveness/accessibility: passed at `1280 × 720`, `397 × 667` and `390 × 844`. Semantic headings, labels, alt text, skip link and large mobile controls are present.
+- Typography: passed. Cormorant remains the Nika Estate display face; Inter carries body and controls. The hero subtitle is substantially smaller than the headline, with controlled line height and non-breaking prepositions in the key copy.
+- Spacing and layout: passed. Desktop and mobile grids preserve hierarchy, case tables collapse cleanly, and all tested content stays within the viewport.
+- Colors and tokens: passed. Existing gold, ivory, black and neutral border tokens are used consistently and retain readable contrast.
+- Image quality: passed. The hero, city cards, projects and case studies use real property imagery; no placeholder or code-drawn imagery was introduced.
+- Copy and content: passed. The Archive location is corrected to DLRC, the 4% line is identified as DLD registration, admin fee is explicitly marked for lot-level confirmation, and growth figures are labelled as scenarios rather than guarantees.
+- Interaction and accessibility: passed. Semantic form controls, labels, alt text, keyboard-compatible buttons and responsive tap targets are present. Full quiz auto-advance, back navigation availability, Telegram conditional field, goal synchronization and mobile CTA behavior were checked.
+- Console and resilience: passed. No browser console errors. Document width equals viewport width at both `1280px` and `390px`.
 
 ## Comparison history
 
-1. Initial comparison found a P2 mobile density issue: the hero used a `635px` minimum height, proof points stacked vertically, and the fixed CTA could cover the bottom of the first screen. Fixes: desktop hero `610px → 560px`; mobile hero `635px → 548px`; mobile heading `37px → 34px`; proof points changed to a compact three-column row; the fixed CTA now starts hidden and remains hidden while the hero is visible. Post-fix evidence: `mobile-comparison-final.jpg` and `mobile-hero-final.jpg`.
-2. Focused mobile review found a P2 overlap: the fixed CTA covered meeting-plan and project content while equivalent inline CTAs were already present. Fix: sections with their own conversion action now opt into `data-mobile-cta-cover`, and the shared observer respects that state. Post-fix evidence: `mobile-plan-final.jpg`; the numbered list is unobstructed.
-3. Final browser pass found no console errors. Mobile menu expands/collapses, project links transfer the selected project into the form, phone fields initialize with `+`, Telegram reveals a required username field, and direct WhatsApp/call links remain separate from form submission.
+1. Initial review found P2 hierarchy drift: the hero subtitle was part of the H1, there was no inline first-screen CTA, and the selection CTA sat below the cards. Fixes: separated the subtitle, added the hero action, and moved «Получить разбор» to the upper-right. Post-fix evidence: final desktop hero and selection captures.
+2. Initial content review found P2 clarity gaps in the investment example: a single paragraph mixed the booking payment, DLD and later instalments, while the project location was inaccurate. Fixes: corrected DLRC, separated the payment table, displayed the 50/50 schedule, added layouts and a real project image. Post-fix evidence: final desktop and mobile Archive captures.
+3. Initial mobile review found P2 scanability risk in a wide financial table. Fix: cards and tables collapse to one column at `390px`, with AED and USD kept together. Post-fix evidence: mobile numbers, Archive and final-form captures.
+4. Final interaction pass completed the six-step quiz automatically, verified the required Telegram username state and confirmed the selected goal reaches the footer form. No console errors or horizontal overflow remain.
 
 ## Follow-up polish
 
-- P3: once Nika Estate provides a final analytics/form endpoint, replace the current WhatsApp handoff with CRM submission while keeping the visible form flow unchanged.
+- P3: replace scenario assumptions with unit-specific rent comparables when the broker confirms the exact active lot and current leasing data.
 
 ## Implementation checklist
 
-- [x] Compact desktop and mobile hero.
-- [x] Sans-serif hierarchy and reduced heading line gaps.
-- [x] Reference block logic adapted to Nika Estate.
-- [x] Four project cards with purpose, yield benchmark and first-payment context.
-- [x] CTA coverage throughout the page without content overlap.
-- [x] Conditional Telegram username and separate direct-contact buttons.
-- [x] Desktop/mobile visual comparison and interaction checks.
+- [x] Compact hero subtitle and first-screen CTA.
+- [x] Selection headline and CTA in the requested position.
+- [x] Concrete quiz outcomes and automatic progression.
+- [x] Budget entry point from `$35,000`.
+- [x] AED/USD conversions and 6–7% rental range.
+- [x] Archive payment table, layouts, rental and resale scenarios.
+- [x] Second worked example for Jadeel.
+- [x] Removed the visible sources and city-market cards.
+- [x] Desktop/mobile visual and interaction checks.
 
 final result: passed
