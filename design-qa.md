@@ -62,13 +62,13 @@
 
 ---
 
-# Design QA — portfolio landing `/about/`
+# Design QA — property selection landing `/real-estate/`
 
 ## Reference and implementation evidence
 
 - Reference URL: `https://bizon-capital.com/en/about`.
 - Reference captures: `/private/tmp/prodigital-work/screens/nika-bizon-reference/source-desktop-00.png` and `/private/tmp/prodigital-work/screens/nika-bizon-reference/source-mobile-00.png`.
-- Implementation URL: `http://localhost:4174/about/`.
+- Implementation URL: `http://localhost:4174/real-estate/`.
 - Implementation captures: `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-desktop-hero.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-desktop-projects.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-hero.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-projects.jpg` and `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-form.jpg`.
 - Combined comparisons: `/private/tmp/prodigital-work/screens/nika-bizon-comparison/desktop-hero-comparison.jpg` and `/private/tmp/prodigital-work/screens/nika-bizon-comparison/mobile-hero-comparison.jpg`.
 - Viewports: desktop `1440 × 900`; mobile `390 × 844`. The reference surface returned Retina-scaled captures and failed to load several of its own remote images; comparison used normalized viewport proportions and the visible structure.
