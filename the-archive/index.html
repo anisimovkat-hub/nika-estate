@@ -155,14 +155,18 @@
 
     <section class="archive-cta-band">
       <div class="shell">
-        <div><p class="archive-kicker">Актуальные лоты</p><h2>Получите подбор квартир The Archive под&nbsp;ваш бюджет</h2></div>
-        <a class="button archive-light" href="#request">Получить подбор</a>
+        <div>
+          <p class="archive-kicker">Персональный расчёт</p>
+          <h2>Получите инвестиционный план по&nbsp;The Archive</h2>
+          <p class="archive-cta-copy">Брокер сравнит 50/50 и&nbsp;60/40, рассчитает платежи, аренду и&nbsp;сценарий перепродажи для&nbsp;выбранной квартиры.</p>
+        </div>
+        <a class="button archive-light" href="#request">Записаться на консультацию</a>
       </div>
     </section>
 
     <section class="archive-payment shell" id="payment">
       <div class="archive-heading-row">
-        <div><p class="archive-kicker">Покупка</p><h2>Два плана оплаты — оба перед глазами</h2></div>
+        <div><p class="archive-kicker">Покупка</p><h2>План платежей</h2></div>
         <div class="payment-unit-picker"><label for="payment-unit">Посчитать для квартиры</label><select id="payment-unit" data-payment-unit><option value="666000">Студия — AED 666 000</option><option value="979000">1 спальня — AED 979 000</option><option value="1550000">2 спальни — AED 1 550 000</option><option value="1800000">3 спальни — AED 1 800 000</option></select></div>
       </div>
       <div class="payment-plans">
@@ -187,22 +191,77 @@
     </section>
 
     <section class="archive-calculator">
-      <div class="shell calculator-grid">
+      <div class="shell">
         <div class="calculator-copy">
-          <p class="archive-kicker">Инвестиционный сценарий</p>
-          <h2>Посчитайте ориентир по&nbsp;аренде</h2>
-          <p>Выберите тип квартиры и&nbsp;ставку. Калькулятор покажет размер брони и&nbsp;возможную валовую аренду после получения ключей.</p>
+          <div class="calculator-heading">
+            <p class="archive-kicker">Инвестиционный сценарий</p>
+            <h2>Сколько можно заработать на&nbsp;этом объекте?</h2>
+          </div>
+          <p>Выберите квартиру и&nbsp;задайте свой сценарий. Сразу увидите аренду, возможный результат перепродажи и&nbsp;сумму, которая понадобится до&nbsp;получения ключей.</p>
+        </div>
+
+        <div class="calculator-panel">
           <div class="calculator-controls">
-            <label>Тип квартиры<select data-calc-unit><option value="666000">Студия — от AED 666 000</option><option value="979000">1 спальня — от AED 979 000</option><option value="1550000">2 спальни — от AED 1 550 000</option><option value="1800000">3 спальни — от AED 1 800 000</option></select></label>
-            <label>Сценарная валовая доходность<select data-calc-yield><option value="0.06">6% в год</option><option value="0.065" selected>6,5% в год</option><option value="0.07">7% в год</option></select></label>
+            <fieldset class="calculator-field calculator-field-wide">
+              <legend>Тип квартиры</legend>
+              <div class="calc-segments" data-calc-units>
+                <button class="is-active" type="button" data-calc-unit="666000">Студия</button>
+                <button type="button" data-calc-unit="979000">1 спальня</button>
+                <button type="button" data-calc-unit="1550000">2 спальни</button>
+                <button type="button" data-calc-unit="1800000">3 спальни</button>
+              </div>
+            </fieldset>
+            <fieldset class="calculator-field calculator-field-wide">
+              <legend>План платежей</legend>
+              <div class="calc-segments calc-segments-two" data-calc-plans>
+                <button class="is-active" type="button" data-calc-plan="50" data-before-handover="0.54">50/50</button>
+                <button type="button" data-calc-plan="60" data-before-handover="0.64">60/40 с&nbsp;постоплатой</button>
+              </div>
+            </fieldset>
+            <label class="calculator-range">
+              <span>Валовая аренда <output data-calc-yield-output>6,5% в&nbsp;год</output></span>
+              <input type="range" min="5" max="8" step="0.1" value="6.5" data-calc-yield>
+              <small><span>5%</span><span>8%</span></small>
+            </label>
+            <label class="calculator-range">
+              <span>Рост цены <output data-calc-growth-output>7% в&nbsp;год</output></span>
+              <input type="range" min="3" max="12" step="0.5" value="7" data-calc-growth>
+              <small><span>3%</span><span>12%</span></small>
+            </label>
+            <label class="calculator-range calculator-field-wide">
+              <span>Срок сценария <output data-calc-years-output>3 года</output></span>
+              <input type="range" min="2" max="5" step="1" value="3" data-calc-years>
+              <small><span>2 года</span><span>5 лет</span></small>
+            </label>
+          </div>
+
+          <div class="calculator-summary" aria-live="polite">
+            <div><span>Первый платёж: 20% + 4% DLD</span><b data-calc-booking>AED 159 840</b><small data-calc-booking-usd>≈ $43 500</small></div>
+            <div><span>До получения ключей по&nbsp;плану <em data-calc-plan-label>50/50</em></span><b data-calc-handover>AED 359 640</b><small data-calc-handover-usd>≈ $97 900</small></div>
+          </div>
+
+          <div class="calculator-scenarios" aria-live="polite">
+            <article>
+              <p class="archive-kicker">Долгосрочная аренда</p>
+              <h3>Доход после получения ключей</h3>
+              <dl>
+                <div><dt>В&nbsp;среднем в&nbsp;месяц</dt><dd><b data-calc-monthly>AED 3 608</b><small data-calc-monthly-usd>≈ $980</small></dd></div>
+                <div><dt>Валовая аренда в&nbsp;год</dt><dd><b data-calc-annual>AED 43 290</b><small data-calc-annual-usd>≈ $11 800</small></dd></div>
+                <div><dt>Окупаемость по&nbsp;валовой аренде</dt><dd><b data-calc-payback>15,4 года</b><small>без учёта роста цены</small></dd></div>
+              </dl>
+            </article>
+            <article>
+              <p class="archive-kicker">Перепродажа</p>
+              <h3>Сценарий через <span data-calc-years-label>3 года</span></h3>
+              <dl>
+                <div><dt>Расчётная цена квартиры</dt><dd><b data-calc-resale>AED 815 900</b><small data-calc-resale-usd>≈ $222 200</small></dd></div>
+                <div><dt>Рост стоимости</dt><dd><b data-calc-profit>AED 149 900</b><small data-calc-profit-usd>≈ $40 800</small></dd></div>
+                <div><dt>Аренда + рост цены</dt><dd><b data-calc-total>AED 279 800</b><small><span data-calc-total-usd>≈ $76 200</span> · <span data-calc-roi>40,4%</span> к&nbsp;цене + DLD</small></dd></div>
+              </dl>
+            </article>
           </div>
         </div>
-        <div class="calculator-results" aria-live="polite">
-          <div><span>Бронь 20%</span><b data-calc-booking>AED 133 200</b><small data-calc-booking-usd>≈ $36 300</small></div>
-          <div><span>Валовая аренда в&nbsp;год</span><b data-calc-annual>AED 43 290</b><small data-calc-annual-usd>≈ $11 800</small></div>
-          <div><span>В&nbsp;среднем в&nbsp;месяц</span><b data-calc-monthly>AED 3 608</b><small data-calc-monthly-usd>≈ $980</small></div>
-        </div>
-        <p class="archive-disclaimer calc-note">Расчёт показывает сценарий 6–7% от&nbsp;стартовой цены. Чистый доход зависит от&nbsp;арендной ставки, сервисного сбора, меблировки, простоя и&nbsp;управления.</p>
+        <p class="archive-disclaimer calc-note">Калькулятор показывает сценарий, а&nbsp;не гарантированный доход. Расчёт ведётся от&nbsp;стартовой цены, включает 4% DLD и&nbsp;не учитывает административный и&nbsp;сервисный сборы, простой, управление, расходы на&nbsp;сделку и&nbsp;условия переуступки. Фактические цифры брокер проверит по&nbsp;выбранному лоту.</p>
       </div>
     </section>
 
@@ -240,21 +299,21 @@
 
     <section class="archive-location shell" id="location">
       <div class="archive-heading-row">
-        <div><p class="archive-kicker">Dubai Land Residence Complex</p><h2>Город рядом</h2></div>
-        <p>Район связан с&nbsp;основными направлениями Дубая через Sheikh Mohammed Bin Zayed Road.</p>
+        <div><p class="archive-kicker">Dubai Land Residence Complex</p><h2>Вся инфраструктура и&nbsp;центр Дубая рядом</h2></div>
+        <p>DLRC — развивающийся жилой район между Academic City и&nbsp;Dubai–Al Ain Road. Он подходит для&nbsp;спокойной жизни и&nbsp;долгосрочной аренды: рядом университеты, школы, магазины и&nbsp;спортивные центры, а&nbsp;до&nbsp;Downtown и&nbsp;аэропорта — около 20&nbsp;минут на&nbsp;автомобиле.</p>
       </div>
       <div class="location-grid">
         <div class="location-times">
-          <div><b>5 минут</b><span>Dubai Academic City</span></div>
-          <div><b>5 минут</b><span>Dubai Outlet Mall</span></div>
-          <div><b>10 минут</b><span>Global Village</span></div>
-          <div><b>15 минут</b><span>Mohammed Bin Rashid Library</span></div>
-          <div><b>20 минут</b><span>Downtown Dubai</span></div>
-          <div><b>20 минут</b><span>Dubai International Airport</span></div>
+          <div><b>Dubai Academic City</b><span><strong>5 минут</strong> · университетский кластер</span></div>
+          <div><b>Dubai Outlet Mall</b><span><strong>5 минут</strong> · магазины и&nbsp;сервисы</span></div>
+          <div><b>Global Village</b><span><strong>10 минут</strong> · семейные развлечения</span></div>
+          <div><b>Mohammed Bin Rashid Library</b><span><strong>15 минут</strong> · библиотека у&nbsp;Dubai Creek</span></div>
+          <div><b>Downtown Dubai</b><span><strong>20 минут</strong> · Burj Khalifa и&nbsp;Dubai Mall</span></div>
+          <div><b>Dubai International Airport</b><span><strong>20 минут</strong> · терминалы DXB</span></div>
         </div>
         <div class="location-map"><img src="../assets/images/the-archive/dlrc-map.webp" loading="lazy" alt="Карта Dubai Land Residence Complex с отметкой The Archive"><small>Координаты: 25.09826, 55.37543 · © OpenStreetMap contributors</small><a href="https://www.google.com/maps/search/?api=1&amp;query=25.09826%2C55.37543" target="_blank" rel="noopener">Открыть The Archive в&nbsp;Google Maps ↗</a></div>
       </div>
-      <div class="location-context"><article><b>Для жизни</b><p>Спокойная жилая среда рядом с&nbsp;Academic City, школами и&nbsp;повседневной инфраструктурой.</p></article><article><b>Для аренды</b><p>Спрос формируют сотрудники соседних деловых и&nbsp;образовательных кластеров.</p></article><article><b>Для города</b><p>Рядом E66 и&nbsp;Sheikh Mohammed Bin Zayed Road — удобные маршруты в&nbsp;центр и&nbsp;к&nbsp;аэропорту.</p></article></div>
+      <div class="location-context"><article><b>Для жизни</b><p>Спокойный жилой район с&nbsp;магазинами, школами и&nbsp;повседневными сервисами рядом.</p></article><article><b>Для аренды</b><p>Потенциальные арендаторы — сотрудники и&nbsp;студенты соседних образовательных и&nbsp;деловых кластеров.</p></article><article><b>Для поездок по&nbsp;городу</b><p>Выезды на&nbsp;E66 и&nbsp;Sheikh Mohammed Bin Zayed Road связывают район с&nbsp;центром и&nbsp;аэропортом.</p></article></div>
     </section>
 
     <section class="archive-request" id="request" data-mobile-cta-cover>
@@ -265,13 +324,13 @@
           <p>Брокер проверит свободные этажи и&nbsp;виды, рассчитает первый взнос и&nbsp;соберёт план окупаемости под&nbsp;ваш бюджет.</p>
           <div class="request-contacts"><a href="tel:+97145574496">+971 4 557 4496</a><a href="mailto:info.dubai@nikaestate.com">info.dubai@nikaestate.com</a></div>
         </div>
-        <form class="lead-form archive-form" data-page="The Archive by Imtiaz" data-offer-name="Подбор квартир The Archive by Imtiaz">
+        <form class="lead-form archive-form" data-page="The Archive by Imtiaz" data-offer-name="Инвестиционный план по The Archive by Imtiaz">
           <input type="hidden" name="project" value="The Archive by Imtiaz">
           <label>Имя<input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
           <label>Контактный номер<input type="tel" name="phone" required autocomplete="tel" data-phone placeholder="+7 999 000-00-00"></label>
           <div class="messenger-field"><span class="field-label">Где с&nbsp;вами связаться?</span><div class="messenger-options"><label><input type="radio" name="messenger" value="WhatsApp" checked><span>WhatsApp</span></label><label><input type="radio" name="messenger" value="Telegram"><span>Telegram</span></label><label><input type="radio" name="messenger" value="Телефон"><span>Позвонить</span></label><label><input type="radio" name="messenger" value="MAX"><span>MAX</span></label></div></div>
           <label class="telegram-field" data-telegram-field hidden>Ник в&nbsp;Telegram<input type="text" name="telegram" placeholder="@username"></label>
-          <button class="button archive-primary" type="submit">Получить материалы</button>
+          <button class="button archive-primary" type="submit">Получить расчёт и план платежей</button>
           <p class="form-status" data-form-status aria-live="polite"></p>
           <p class="form-note">Заявка попадёт брокеру Nika Estate. Он свяжется выбранным способом.</p>
         </form>
@@ -303,6 +362,6 @@
   <div class="mobile-cta"><a class="button archive-primary" href="#request">Получить цены и планировки</a></div>
   <script src="../assets/scripts/site.js"></script>
   <script src="./archive.js"></script>
-  <script src="../assets/scripts/lead-capture.js" data-endpoint="https://script.google.com/macros/s/AKfycbwioz7fVEzsnDXOz5EOG5f7Db1detqxZYDZF1T8OqyU2DAeUW-_P5envHK6vwCtcNKAbg/exec" data-landing-name="The Archive by Imtiaz" data-offer-name="Подбор квартир The Archive by Imtiaz"></script>
+  <script src="../assets/scripts/lead-capture.js" data-endpoint="https://script.google.com/macros/s/AKfycbwioz7fVEzsnDXOz5EOG5f7Db1detqxZYDZF1T8OqyU2DAeUW-_P5envHK6vwCtcNKAbg/exec" data-landing-name="The Archive by Imtiaz" data-offer-name="Инвестиционный план по The Archive by Imtiaz"></script>
 </body>
 </html>
