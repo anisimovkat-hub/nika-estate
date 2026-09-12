@@ -60,4 +60,42 @@
 - [x] Removed the visible sources and city-market cards.
 - [x] Desktop/mobile visual and interaction checks.
 
+---
+
+# Design QA — portfolio landing `/about/`
+
+## Reference and implementation evidence
+
+- Reference URL: `https://bizon-capital.com/en/about`.
+- Reference captures: `/private/tmp/prodigital-work/screens/nika-bizon-reference/source-desktop-00.png` and `/private/tmp/prodigital-work/screens/nika-bizon-reference/source-mobile-00.png`.
+- Implementation URL: `http://localhost:4174/about/`.
+- Implementation captures: `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-desktop-hero.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-desktop-projects.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-hero.jpg`, `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-projects.jpg` and `/private/tmp/prodigital-work/screens/nika-bizon-implementation/about-mobile-form.jpg`.
+- Combined comparisons: `/private/tmp/prodigital-work/screens/nika-bizon-comparison/desktop-hero-comparison.jpg` and `/private/tmp/prodigital-work/screens/nika-bizon-comparison/mobile-hero-comparison.jpg`.
+- Viewports: desktop `1440 × 900`; mobile `390 × 844`. The reference surface returned Retina-scaled captures and failed to load several of its own remote images; comparison used normalized viewport proportions and the visible structure.
+
+## Full-view comparison
+
+- The implementation preserves the reference sequence and page rhythm: compact sticky header, two-column hero, three proof points, four-part trust band, eight services, project catalog, photo-led location grid, dark trust section, four steps, market story, FAQ and conversion form.
+- The visual layer intentionally follows Nika Estate: Cormorant display type, Inter body copy, ivory backgrounds, near-black panels, muted gold and square editorial cards.
+- Desktop hero and projects use balanced columns with readable line lengths. Mobile follows a single-column sequence with full-width CTAs and no horizontal overflow.
+
+## Focused checks
+
+- Images: 21 local image placements loaded with non-zero intrinsic dimensions; no remote image hotlinks or placeholders.
+- Projects: nine current portfolio examples include a purpose and a clearly labelled 2026 area benchmark or scenario. Unverified lot-level values are not presented as current facts.
+- Interactions: mobile menu opens and closes; FAQ expands; project CTAs transfer the selected project into the lead form; Telegram reveals a required username field.
+- Lead routing: the shared Google Sheets capture script appears exactly once and the form includes a specific offer name.
+- Accessibility: semantic headings, labels, alt text, keyboard buttons, visible focus behavior and a corrected visually hidden menu label.
+- Console and resilience: zero console errors; document width equals viewport width at `390px`; all local references resolve.
+
+## Comparison history
+
+1. Initial mobile review found a P2 issue: the screen-reader menu label was visibly rendered beside the hamburger. Added a global `.sr-only` utility and verified the corrected header at `390 × 844`.
+2. Copy review found a P2 issue in the hero: the first headline version sounded translated. Replaced it with the direct offer «Недвижимость для жизни, аренды и роста капитала» and rechecked desktop and mobile line breaks.
+3. Financial review found a P2 trust gap: yield figures did not expose their sources. Added direct market-report links and kept the distinction between district benchmarks and a unit-specific forecast.
+
+## Follow-up polish
+
+- P3: replace district benchmarks with exact net-yield models after Nika Estate confirms an active unit, current rent comparables and annual service charges.
+
 final result: passed

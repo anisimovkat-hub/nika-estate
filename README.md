@@ -7,24 +7,22 @@ Static Russian-language landing pages in the Nika Estate brand style.
 - `/uae/` — Dubai vs Abu Dhabi
 - `/saudi-arabia/` — Riyadh and OSUS Eye
 - `/invest-meeting/` — online investment meeting
-- `/real-estate/` — broad UAE property selection landing
-- `/the-archive/` — The Archive by Imtiaz project landing
+- `/about/` — Nika Estate services, current project examples, locations and 2026 market yield benchmarks
 
 The visual system uses local Inter and Cormorant Garamond fonts, the real Nika Estate logo, editorial whitespace, black typography and the brand gold accent. Lead forms open the official Nika Estate WhatsApp with a prefilled message.
 
 ## Publication
 
-The public site is deployed to GitHub Pages at:
+The public site is deployed to Cloudflare Pages at:
 
-- https://anisimovkat-hub.github.io/nika-estate/
-- https://anisimovkat-hub.github.io/nika-estate/dubai/
-- https://anisimovkat-hub.github.io/nika-estate/uae/
-- https://anisimovkat-hub.github.io/nika-estate/saudi-arabia/
-- https://anisimovkat-hub.github.io/nika-estate/invest-meeting/
-- https://anisimovkat-hub.github.io/nika-estate/real-estate/
-- https://anisimovkat-hub.github.io/nika-estate/the-archive/
+- https://nika-estate.pages.dev/
+- https://nika-estate.pages.dev/dubai/
+- https://nika-estate.pages.dev/uae/
+- https://nika-estate.pages.dev/saudi-arabia/
+- https://nika-estate.pages.dev/invest-meeting/
+- https://nika-estate.pages.dev/about/
 
-GitHub remains the source of truth and GitHub Pages publishes directly from the `main` branch. The older Cloudflare Pages deployment is retained only as a fallback because it may be unavailable to some visitors in Russia.
+GitHub remains the source of truth. Cloudflare Pages receives a clean static build from the `main` branch, without repository metadata or internal project documents.
 
 ## Lead capture
 
