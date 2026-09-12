@@ -151,16 +151,20 @@ if (quiz) {
     const data = new FormData(quiz);
     const messenger = checkedValue(quiz, 'messenger');
     const telegram = (data.get('telegram') || '').toString().trim();
+    const quizLine = (label, field) => {
+      const value = (data.get(field) || '').toString().trim();
+      return value ? `${label}: ${value}.` : '';
+    };
     const message = [
-      'Здравствуйте! Хочу получить подбор лучших объектов.',
-      `Цель: ${data.get('quiz_goal')}.`,
-      `Первый платёж: ${data.get('quiz_budget')}.`,
-      `Регион: ${data.get('quiz_region')}.`,
-      `Формат: ${data.get('quiz_type')}.`,
-      `Срок покупки: ${data.get('quiz_timing')}.`,
-      `Имя: ${data.get('name')}.`,
-      `Телефон: ${data.get('phone')}.`,
-      `Связаться: ${messenger}.`,
+      'Здравствуйте! Хочу получить подбор объектов.',
+      quizLine('Цель', 'quiz_goal'),
+      quizLine('Первый платёж', 'quiz_budget'),
+      quizLine('Регион', 'quiz_region'),
+      quizLine('Формат', 'quiz_type'),
+      quizLine('Срок покупки', 'quiz_timing'),
+      quizLine('Имя', 'name'),
+      quizLine('Телефон', 'phone'),
+      messenger ? `Связаться: ${messenger}.` : '',
       telegram ? `Telegram: ${telegram}.` : ''
     ].filter(Boolean).join('\n');
 
