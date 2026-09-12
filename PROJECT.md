@@ -1,18 +1,19 @@
 # Nika Estate landing pages
 
-- Repository: https://github.com/anisimovkat-hub/nika-estate
-- Live base URL: https://anisimovkat-hub.github.io/nika-estate/
+- Repository: https://github.com/nika-estate/nika-estate
+- Live base URL: https://nika-estate.github.io/nika-estate/
 - Deployment: GitHub Pages from `main`; Cloudflare Pages project `nika-estate` retained as backup
 - Build: static HTML, CSS and JavaScript; no package installation
 
 ## Routes
 
-- `https://anisimovkat-hub.github.io/nika-estate/` — City Walk + Central Park
-- `https://anisimovkat-hub.github.io/nika-estate/dubai/` — UAE property selection with a six-step quiz and project examples
-- `https://anisimovkat-hub.github.io/nika-estate/uae/` — Dubai and Abu Dhabi comparison
-- `https://anisimovkat-hub.github.io/nika-estate/saudi-arabia/` — Saudi Arabia / Riyadh / OSUS Eye
-- `https://anisimovkat-hub.github.io/nika-estate/invest-meeting/` — online investment consultation
-- `https://anisimovkat-hub.github.io/nika-estate/real-estate/` — conversion landing for property selection in the UAE and Saudi Arabia, with current projects and 2026 market yield benchmarks
+- `https://nika-estate.github.io/nika-estate/` — City Walk + Central Park
+- `https://nika-estate.github.io/nika-estate/dubai/` — UAE property selection with a six-step quiz and project examples
+- `https://nika-estate.github.io/nika-estate/uae/` — Dubai and Abu Dhabi comparison
+- `https://nika-estate.github.io/nika-estate/saudi-arabia/` — Saudi Arabia / Riyadh / OSUS Eye
+- `https://nika-estate.github.io/nika-estate/invest-meeting/` — online investment consultation
+- `https://nika-estate.github.io/nika-estate/real-estate/` — conversion landing for property selection in the UAE and Saudi Arabia, with current projects and 2026 market yield benchmarks
+- `https://nika-estate.github.io/nika-estate/the-archive/` — The Archive by Imtiaz project landing
 
 ## Lead routing
 
